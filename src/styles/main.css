@@ -1,0 +1,117 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    --bg-color: #ffa63b;
+    --secondary-bg-color: #ffc25b;
+    --primary-color: #ffffff;
+    --secondary-color: #5bb2ff;
+    --text-primary-color: #212122;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3fd4fb",endColorstr="#468afc",GradientType=1);
+    color: var(--text-primary-color);
+}
+body{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgb(255,194,91);
+    background: -moz-radial-gradient(circle, rgba(255,194,91,1) 0%, rgba(255,166,59,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(255,194,91,1) 0%, rgba(255,166,59,1) 100%);
+    background: radial-gradient(circle, rgba(255,194,91,1) 0%, rgba(255,166,59,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffc25b",endColorstr="#ffa63b",GradientType=1);
+    font-family: Josefin;
+}
+
+@font-face {
+    font-family: DMSerif;
+    src: url(../assets/fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: Josefin;
+    src: url(../assets/fonts/Josefin/JosefinSans.ttf);
+}
+
+@font-face {
+    font-family: comicalCartoon;
+    src: url(../assets/fonts/ComicalCartoon/ComicalCartoon.ttf);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Josefin;
+}
+
+.button {
+    font-family: comicalCartoon;
+}
+
+.container {
+    display: flex;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border-bottom: 2px solid #004433;
+    border-left: 2px solid #004433;
+    border-radius: 50px;
+    animation: loading 1.5s ease-out infinite;
+}
+
+@keyframes loading {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.main-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.display-container {
+    width: 100%;
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0px 0px 15px #0000004b;
+}
+
+.inside-container {
+    margin: 10px;
+    padding: 10px  0;
+}
+
+.display-none{
+    display: none;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+}
+
+code {
+    background-color: #dbdbdb;
+    text-wrap: nowrap;
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+
+button {
+   border-radius: 10px;
+   border: none;
+}
+
+fieldset {
+    border-radius: 10px;
+}

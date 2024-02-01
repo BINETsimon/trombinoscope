@@ -1,0 +1,63 @@
+/* PROFILE */
+.trombi-container {
+    margin: 20px;
+    padding-top: 10px;
+}
+
+.picture-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.picture-names{
+    margin-top: 5px;
+}
+
+.image-item {
+    box-shadow: 0 0 10px #00000075;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.picture-card{
+    width: 120px;
+    display: flex;
+    position: relative;
+    margin: auto;
+}
+
+.picture-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.picture-card .button-group {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.edit-btn {
+    background-color: var(--bg-color);
+    border: 2px solid #ffc392;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    border: 2px solid #ff8888;
+}
+

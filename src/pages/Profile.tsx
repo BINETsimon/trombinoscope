@@ -8,8 +8,6 @@ import FileUpdate from '../components/Profile/FileUpdate';
 import { PictureState } from '../store/interfaces/trombiState';
 import FileDelete from '../components/Profile/FileDelete';
 
-import { HiTrash, HiPencil } from 'react-icons/hi';
-
 function Profile() {
 
   const user = useSelector((state: RootState) => state.user);
@@ -55,32 +53,32 @@ function Profile() {
                     .filter(file => file.label === label)
                     .map((file, index) => (
                       <div key={index} className='image-item'>
-                        <div className='picture-card'>
-                          <div className="button-group">
-                            <button className='edit-btn' onClick={editHandler} value={file.id}><HiPencil/></button>
-                            <button className='delete-btn' onClick={deleteHandler} value={file.id}><HiTrash/></button>
+                        <div className='top-image-item'>
+                          <div className='picture-card'>
+                            {file.local_url ? (
+                              <img src={file.local_url} alt={file.first_name} />
+                            ) : (
+                              <Loader />
+                            )}
                           </div>
-                          {file.local_url ? (
-                            <img src={file.local_url} alt={file.first_name} />
-                          ) : (
-                            <Loader />
-                          )}
                         </div>
                         <div className='picture-names'>
                           <div>
-                            {file.first_name}  
+                            <b>{file.first_name} </b>
                           </div>
                           <div>
                             {file.last_name}
                           </div>
+                          <button className='edit-btn full-btn' onClick={editHandler} value={file.id}>Editer</button>
+                          <button className='delete-btn full-btn' onClick={deleteHandler} value={file.id}>Supprimer</button>
                         </div>
                       </div>
                     ))}
                 </div>
               </div>
             ))}
+            <button className="mt-20" onClick={addPhotoHandler}>ajouter les photos</button>
           </div>
-          <button onClick={addPhotoHandler}>ajouter les photos</button>
         </div>
       </div>
       <Backdrop show={backdrop} setShow={setBackdrop} >
@@ -94,7 +92,7 @@ function Profile() {
                     <FileUpdate setShow={setBackdrop} file={edit}></FileUpdate>
                   ):
                     (
-                      <></>
+                      <>test</>
                     )
                 }
               </>

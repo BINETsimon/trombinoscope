@@ -33,8 +33,8 @@ function GameQueue({ gameProp, setGameProp }: MyComponentProps) {
       { questionIndex <= gameProp.length ? 
         (
           <div className='question-container'>
+            <div>Question : {questionIndex} / {gameProp.length} </div>
             <img src={currentQuestion.file.local_url!} alt={currentQuestion.file.first_name} />
-            <div> réponse : {currentQuestion.file.first_name}</div>
             <div className="proposition-container">
               {currentQuestion.possibilities.map((possibility, indexP) => (
                 <button onClick={handleClick} key={indexP} name={possibility}>{possibility}</button>

@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <div className="main-container">
-      <h1>Bienvenue sur Trainbinoscope</h1>
+      <h1>Bienvenue sur T-KI</h1>
       <div className="display-container">
         <div className="inside-container">
           <p>Cette application a pour but de vous entrainer à mieux connaître les noms de vos élèves, employés ou autre...</p>

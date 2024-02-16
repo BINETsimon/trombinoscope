@@ -1,8 +1,8 @@
 html, body{
     margin: 0;
     padding: 0;
-    --bg-color: #ffa63b;
-    --secondary-bg-color: #ffc25b;
+    --bg-color: #ac8eff;
+    --secondary-bg-color: #e2d8ff;
     --primary-color: #ffffff;
     --secondary-color: #5bb2ff;
     --text-primary-color: #212122;
@@ -19,17 +19,14 @@ html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: rgb(255,194,91);
-    background: -moz-radial-gradient(circle, rgba(255,194,91,1) 0%, rgba(255,166,59,1) 100%);
-    background: -webkit-radial-gradient(circle, rgba(255,194,91,1) 0%, rgba(255,166,59,1) 100%);
-    background: radial-gradient(circle, rgba(255,194,91,1) 0%, rgba(255,166,59,1) 100%);
+    background-color: white;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffc25b",endColorstr="#ffa63b",GradientType=1);
-    font-family: Josefin;
+    font-family: PlusJakartaSans;
 }
 
 @font-face {
-    font-family: DMSerif;
-    src: url(../assets/fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf);
+    font-family: PlusJakartaSans;
+    src: url(../assets/fonts/PlusJakartaSans/PlusJakartaSans-VariableFont_wght.ttf);
 }
 
 @font-face {
@@ -75,13 +72,15 @@ h1, h2, h3, h4, h5 {
 .main-container {
     max-width: 800px;
     margin: auto;
+    margin-top: 100px;
 }
 
 .display-container {
     width: 100%;
     background-color: white;
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0px 0px 15px #0000004b;
+    border-radius: 20px ;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .inside-container {
@@ -108,10 +107,49 @@ code {
 }
 
 button {
-   border-radius: 10px;
+   border-radius: 5px;
    border: none;
+   background-color: var(--bg-color);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   border: 2px solid var(--bg-color);
+   padding: 5px;
+   font-weight: bold;
+   cursor: pointer;
+   font-family: Josefin;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.full-btn {
+    width: 100%;
 }
 
 fieldset {
-    border-radius: 10px;
+    margin-top: 10px;
+    border: none;
+    display: flex;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+    font-family: Josefin;
+}
+
+.checkbox-filter {
+    font-family: Josefin;
+    padding: 5px;
+    border-radius: 50px;
+    background-color: #dfdfdf; 
 }

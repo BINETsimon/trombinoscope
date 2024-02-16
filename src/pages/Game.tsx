@@ -91,30 +91,37 @@ function Game() {
         game.length === 0 ? 
           (
             <div className="main-container">
-              <h1>Préparation de la partie</h1>
+              <h1>Trouvez le bon nom</h1>
               <div className="display-container">
                 <div className="inside-container">
-                  <form onSubmit={handleSubmit}>
-                    <fieldset>
-                      <legend>Filtre de la série :</legend>
-                      <div>
-                        <input type="checkbox" id="all" name="all"  onChange={toggleCheckbox} checked={labelInput.size === new Set(trombi.files.map(file => file.label)).size}/>
-                        <label>Tous</label>
-                      </div>
-                      {Array.from(new Set(trombi.files.map(file => file.label))).map(label => (
-                        <div key={label}>
-                          <input type="checkbox" id={label} name={label} onChange={toggleCheckbox} checked={labelInput.has(label)} />
-                          <label>{label}</label>
-                        </div>
-                      ))}
-                    </fieldset>
-                    <fieldset>
-                      <legend>Taille de votre Série :</legend>
-                      <input type="range" min="5" max="20" step="5" value={range} onChange={(e) => setRange(parseInt(e.target.value))} />
-                      {range}
-                    </fieldset>
-                    <button type="submit">Commencer</button>
-                  </form>
+                  <div>
+                    <h2>Règles du jeu :</h2>
+                    <p>Vous allez devoir retrouver le nom correspondant à l'image que vous voyez entre 4 proposition. Vous pouvez faire varier la taille de votre série ainsi que filtrer sur les labels que vous avez défini.</p>
+                  </div>
+                  <div>
+                    <h2>Paramètres de la partie :</h2>
+                    <form onSubmit={handleSubmit}>
+                      <fieldset>
+                        <legend>Filtre de la série :</legend>
+                        <label className='checkbox-filter'>
+                          <input type="checkbox" id="all" name="all" onChange={toggleCheckbox} checked={labelInput.size === new Set(trombi.files.map(file => file.label)).size}/>
+                          Tous
+                        </label>
+                        {Array.from(new Set(trombi.files.map(file => file.label))).map(label => (
+                          <label className='checkbox-filter' key={label}>
+                            <input type="checkbox" id={label} name={label} onChange={toggleCheckbox} checked={labelInput.has(label)} />
+                            {label}
+                          </label>
+                        ))}
+                      </fieldset>
+                      <fieldset>
+                        <legend>Taille de votre Série :</legend>
+                        <input type="range" min="5" max="20" step="5" value={range} onChange={(e) => setRange(parseInt(e.target.value))} />
+                        {range}
+                      </fieldset>
+                      <button type="submit" className='start-btn'>Commencer</button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -124,7 +131,7 @@ function Game() {
                 game.length >= 5 ? (
                   <GameQueue gameProp={game} setGameProp={setGame}></GameQueue>
                 ):(
-                  <div>
+                  <div className='game'>
                     <p>Vous devez avoir un minimum de 5 images pour commencer</p>
                     <button onClick={() => setGame([])}>Retour</button>
                   </div>

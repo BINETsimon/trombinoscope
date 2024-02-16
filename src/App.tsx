@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/main.css';
 import './styles/overlay.css';
 import './styles/profile.css';
+import './styles/game.css';
 
 import Home from './pages/Home';
 import Error from './pages/Error';
@@ -41,14 +42,14 @@ function App() {
       });
     }
 
-    if(trombi.files.length === 0)
+    if(trombi.files?.length === 0)
       trombiServiceGetAll().then((response) => {
         dispatch({ type: 'SET_TROMBI', payload: response });
       }).catch((err) => {
         console.log(err);
       });
 
-    if (!trombi.loaded && !trombi.loading && trombi.files.length > 0) {
+    if (!trombi.loaded && !trombi.loading && trombi.files?.length > 0) {
 
       const loadImages = async () => {
         dispatch({ type: 'LOADING_TROMBI' });

@@ -53,9 +53,9 @@ function Signup() {
             <label>Email : </label>
             <input type="text" placeholder="Email" name="email" value={formData.email} onChange={handleChange} />
             <label>Mot de passe : </label>
-            <input type="text" placeholder="Mot de passe" name="password" value={formData.password} onChange={handleChange} />
+            <input type="password" placeholder="Mot de passe" name="password" value={formData.password} onChange={handleChange} />
             <label>Confirmer mot de passe : </label>
-            <input type="text" placeholder="Confirmer mot de passe" name="confPassword" value={formData.confPassword} onChange={handleChange} />
+            <input type="password" placeholder="Confirmer mot de passe" name="confPassword" value={formData.confPassword} onChange={handleChange} />
             <button>Signup</button>
           </form>
         </div>

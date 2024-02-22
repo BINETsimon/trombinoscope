@@ -1,0 +1,14 @@
+version: '3'
+services:
+  # React.js application service
+  front-trombi:
+    build:
+      context: ./
+    container_name: front-trombi
+    env_file:
+      - .env
+    ports:
+      - "5000:8080"
+    restart: always
+    stdin_open: true
+    tty: true
